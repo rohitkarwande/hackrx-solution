@@ -51,7 +51,7 @@ def generate_answers_from_document(pdf_url: str, questions: list[str]) -> list[s
     
     # 3. Create vector embeddings for each chunk using a Sentence Transformer model
     print("INFO: Loading embedding model (this may take a moment on first run)...")
-    model_embed = SentenceTransformer('all-MiniLM-L6-v2')
+    model_embed = SentenceTransformer('multi-qa-MiniLM-L6-cos-v1')
     print("INFO: Encoding text chunks into vectors...")
     chunk_embeddings = model_embed.encode(text_chunks, convert_to_tensor=False, show_progress_bar=True)
     
