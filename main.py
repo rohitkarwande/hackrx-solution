@@ -36,10 +36,17 @@ class HackathonResponse(BaseModel):
     answers: list[str]
 
 
+
 @app.get("/", summary="Check if the API is running")
 def read_root():
     """A simple endpoint to check if the server is alive."""
     return {"status": "ok", "message": "Welcome to the HackRx 6.0 API!"}
+
+@app.get("/test")
+async def run_test():
+    """A simple test endpoint that should respond instantly."""
+    print("INFO: /test endpoint was called successfully!")
+    return {"message": "Test successful, the server is running!"}
 
 
 @app.post("/hackrx/run", response_model=HackathonResponse, summary="Process a document and questions")
