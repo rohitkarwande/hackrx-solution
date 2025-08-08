@@ -6,7 +6,7 @@ import numpy as np
 import google.generativeai as genai
 
 # Get the Hugging Face API URL and Token from environment variables
-MODEL_ID = "sentence-transformers/multi-qa-MiniLM-L6-cos-v1"
+MODEL_ID = "sentence-transformers/all-MiniLM-L6-v2"
 HF_API_URL = f"https://api-inference.huggingface.co/pipeline/feature-extraction/{MODEL_ID}"
 HF_TOKEN = os.environ.get("HF_TOKEN")
 
